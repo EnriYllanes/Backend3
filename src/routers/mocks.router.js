@@ -5,17 +5,15 @@ import { petModel } from '../models/pet.js';
 
 const router = Router();
 
-// 1. GET /api/mocks/mockingpets
 router.get('/mockingpets', async (req, res) => {
     try {
-        const pets = generateMockPets(10); // Genera 10 mascotas fijas
+        const pets = generateMockPets(10); 
         res.send({ status: "success", payload: pets });
     } catch (error) {
         res.status(500).send({ status: "error", message: error.message });
     }
 });
 
-// 2. GET /api/mocks/mockingusers
 router.get('/mockingusers', async (req, res) => {
     try {
         const users = await generateMockUsers(50); // Genera 50 usuarios
@@ -25,7 +23,6 @@ router.get('/mockingusers', async (req, res) => {
     }
 });
 
-// 3. POST /api/mocks/generateData
 router.post('/generateData', async (req, res) => {
     const { users = 0, pets = 0 } = req.body || {};
     try {

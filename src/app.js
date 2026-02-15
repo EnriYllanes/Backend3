@@ -2,11 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import mocksRouter from './routers/mocks.router.js';
-
-// --- ESTAS SON LAS IMPORTACIONES QUE FALTABAN ---
 import { userModel } from './models/user.js';
 import { petModel } from './models/pet.js';
-// ------------------------------------------------
+
 
 dotenv.config();
 
@@ -22,7 +20,7 @@ mongoose.connect(MONGO_URL)
 
 app.use('/api/mocks', mocksRouter);
 
-// Endpoints de comprobación (Criterio N°5)
+// Endpoints de comprobación
 app.get('/api/users', async (req, res) => {
     try {
         const users = await userModel.find();
