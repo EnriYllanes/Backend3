@@ -5,16 +5,22 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "test": "mocha src/test/**/*.test.js --timeout 10000 --exit"
   },
   "dependencies": {
     "@faker-js/faker": "^10.3.0",
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.2.2"
   }
 }
